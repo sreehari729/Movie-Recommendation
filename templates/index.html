@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Movie Recommendation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <style>
+        .bg{
+            height: 100%;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="bg" background="https://w7.pngwing.com/pngs/280/176/png-transparent-the-imitation-game-banner-display-advertising-film-poster-posteritati-movie-poster-gallery-display-advertising-poster-banner.png">
+    <center>
+        <h1 style="color:#da3d09d9; font-size: 50px; margin-top: 1%;">MOVIE RECOMMENDER SYSTEM</h1>
+        <h3 style="color:#f43207; font-size: 40px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">From a dataset of 5000 movies, find similar movies</h3>
+        <form action="/recommendation" method="POST">
+            <label style="color:rgb(247, 25, 9); font-size: 30px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" for="selected_movie">Choose a movie:</label>
+            <select class="js-example-basic-single" name="selected_movie" id="selected_movie" style="width: 300px;">
+                {% for movie in movie_list %}
+                    <option value="{{ movie }}">{{ movie }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Get Recommendations</button>
+        </form>
+    </center>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.js-example-basic-single').select2();
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

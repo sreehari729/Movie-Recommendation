@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap; 
+        }
+
+        li {
+            box-sizing: border-box;
+            width: 25%; 
+            padding: 10px;
+            text-align: center;
+        }
+
+        img {
+            max-width: 80%; 
+            height: auto;
+        }
+    </style>
+    <title>Movie Recommendations</title>
+</head>
+<body>
+    <h2>Recommended Movies:</h2>
+    <ul>
+        {% for name, poster in names_and_posters %}
+            <li>
+                <h3>{{ name }}</h3>
+                <img src="{{ poster }}" alt="Movie Poster">
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
